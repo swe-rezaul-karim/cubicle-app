@@ -66,10 +66,10 @@ jobs:
           username: ${{ secrets.PROD_SERVER_USER }}
           key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           script: |
-            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:latest
-            docker tag ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:latest cubicle-app:latest
-            docker stop cubicle-app || true
-            docker rm cubicle-app || true
-            docker run -d --name cubicle-app -p 80:80 cubicle-app:latest
+            sudo docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:latest
+            sudo docker tag ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:latest cubicle-app:latest
+            sudo docker stop cubicle-app || true
+            sudo docker rm cubicle-app || true
+            sudo docker run -d --name cubicle-app -p 80:80 cubicle-app:latest
           
