@@ -66,6 +66,7 @@ jobs:
           username: ${{ secrets.PROD_SERVER_USER }}
           key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           script: |
+            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:${{ env.IMAGE_TAG }}
             docker tag ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:${{ env.IMAGE_TAG }} cubicle-app:latest
             docker stop cubicle-app || true
