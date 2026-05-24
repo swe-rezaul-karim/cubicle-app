@@ -38,5 +38,5 @@ jobs:
         with:
           name: build-artifacts
           path: build/
-      - name: List files in build/
+      - name: List files with build application
         run: ls -la build/
