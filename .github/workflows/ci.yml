@@ -67,9 +67,8 @@ jobs:
           key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           script: |
             sudo docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
-            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:latest
-            sudo docker tag ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:latest cubicle-app:latest
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:${{ env.IMAGE_TAG }}
+            sudo docker tag ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:${{ env.IMAGE_TAG }} cubicle-app:latest
             sudo docker stop cubicle-app || true
             sudo docker rm cubicle-app || true
             sudo docker run -d --name cubicle-app -p 80:80 cubicle-app:latest
-          
