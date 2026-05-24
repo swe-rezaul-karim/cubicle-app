@@ -20,7 +20,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - run: echo "${{secrets.DOCKERHUB_USERNAME}}/Deploying to production environment..."
+      - run: echo "${{secrets.DOCKERHUB_USERNAME}}/Deploying to production environment."
 
   docker:
     runs-on: ubuntu-latest
