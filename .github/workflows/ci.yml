@@ -7,16 +7,11 @@ on:
 concurrency:
   group: 'deployments'
   cancel-in-progress: true
+
 jobs:
-  deploy-stage:
-    runs-on: ubuntu-latest
-    environment: staging
-    steps:
-      - run: echo "Deploying to staging environment"
   deploy-prod:
     runs-on: ubuntu-latest
     environment: production
-    needs: deploy-stage
     permissions:
       contents: read
     steps:
