@@ -23,6 +23,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     needs: [deploy-stage, deploy-prod]
+    environment: production
     permissions:
       contents: read
     steps:
