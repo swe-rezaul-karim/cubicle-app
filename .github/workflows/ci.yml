@@ -62,9 +62,9 @@ jobs:
       - name: Deploy to production
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.PRO_SERVER_HOST }}
-          username: ${{ secrets.PRO_SERVER_USER }}
-          key: ${{ secrets.PRO_SSH_PRIVATE_KEY }}
+          host: ${{ secrets.PROD_SERVER_HOST }}
+          username: ${{ secrets.PROD_SERVER_USER }}
+          key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           script: |
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:${{ env.IMAGE_TAG }}
             docker tag ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:${{ env.IMAGE_TAG }} cubicle-app:latest
