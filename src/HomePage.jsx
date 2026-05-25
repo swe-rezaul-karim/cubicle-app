@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <nav className="navbar">
-        <div className="logo">ReactPro</div>
+        <div className="logo">Cubicle</div>
 
         <div className="nav-links">
           <a href="#features">Features</a>
@@ -117,7 +117,7 @@ export default function HomePage() {
       </section>
 
       <footer id="contact" className="footer">
-        <p>© 2026 ReactPro. All rights reserved.</p>
+        <p>© 2026 Cubicle. All rights reserved.</p>
       </footer>
     </div>
   );
