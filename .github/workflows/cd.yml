@@ -66,4 +66,4 @@ jobs:
             sudo docker tag ${{ secrets.DOCKERHUB_USERNAME }}/cubicle-app:${{ env.IMAGE_TAG }} cubicle-app:latest
             sudo docker stop cubicle-app || true
             sudo docker rm cubicle-app || true
-            sudo docker run -d --name cubicle-app -p 80:80 cubicle-app:latest
+            sudo docker run -d --name cubicle-app -p 80:80 cubicle-app:${{ env.IMAGE_TAG }}
